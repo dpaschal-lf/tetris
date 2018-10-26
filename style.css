@@ -5,9 +5,9 @@ body{
 	background-color: lightblue;
 }
 .gameContainer{
-	width: 500px;
+	width: 600px;
 	margin: 0 auto;
-	height: 800px;
+	height: 1200px;
 }
 .scoreNextPiece{
 	height: 15%;

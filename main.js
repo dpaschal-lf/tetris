@@ -62,16 +62,17 @@ var blockTemplates = [
 var game;
 
 var defaultBlockSize = {
-	height: 30,
-	width: 30,
-	units: 'px'
+	height: 60,
+	width: 60,
+	unit: 'px'
 }
 
 function startApp(){
 	game = new TetrisGame(defaultBlockSize);
 	game.createPiece(blockTemplates[2], 'lime');
 	game.render();
-	//game.playSong(.09);
+	game.startGameUpdate();
+	game.playSong(.09);
 }
 
 

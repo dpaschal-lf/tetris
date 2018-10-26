@@ -9,10 +9,28 @@ class TetrisGame{
 			score: $("#info"),
 			nextPiece: $("#nextPiece")
 		}
+		this.updateTimeDuration = 1000;
 		this.blockSize = blockSize;
 		this.pieces = [];
 		this.theme = 'theme.mp3';
 		this.player = null;
+		this.updateTimer = null;
+	}
+	startGameUpdate(){
+		if(this.updateTimer !== null){
+			this.stopUpdateTimer();
+		}
+		this.updateTimer = setInterval( this.handleUpdate.bind(this), this.updateTimeDuration);
+	}
+	stopUpdateTimer(){
+		clearInterval(this.updateTimer);
+		this.updateTimer = null;
+	}
+	handleUpdate(){
+		for(var piecesI=0; piecesI < this.pieces.length; piecesI++){
+			var piecesLoc = this.pieces[piecesI].getLocation();
+			this.pieces[piecesI].moveToLocation(piecesLoc.x, piecesLoc.y++);
+		}
 	}
 	playSong(volume){
 		this.player = new Audio();
@@ -22,6 +40,10 @@ class TetrisGame{
 	}
 	createPiece( pieceMap, color){
 		var pieceContainer = new TetrisPiece(pieceMap, color, this.blockSize);
+		var containerWidth = this.domElements.mainGameBoard.width();
+		var blockWidth = containerWidth / this.blockSize.width;
+		var middleBlock = Math.floor((blockWidth / 2))-1;
+		pieceContainer.setLocation( middleBlock, 0);
 		this.pieces.push( pieceContainer );
 	}
 	render(){
