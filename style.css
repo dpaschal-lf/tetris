@@ -1,0 +1,38 @@
+body{
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: lightblue;
+}
+.gameContainer{
+	width: 500px;
+	margin: 0 auto;
+	height: 800px;
+}
+.scoreNextPiece{
+	height: 15%;
+	background-color: lightgrey;
+}
+#pieceContainer{
+	height: 85%;
+	background-color: black;
+}
+#info, #nextPiece{
+	border: 1px solid black;
+	box-sizing: border-box;
+	float: left;
+	height: 100%;
+}
+#info{
+	width: 70%;
+}
+#nextPiece{
+	width: 30%;
+}
+.tetris-piece{
+	position: relative;
+}
+.tetris-block{
+	position: absolute;
+}
+

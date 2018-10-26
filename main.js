@@ -1,0 +1,83 @@
+
+$(document).ready( startApp );
+var blockTemplates = [
+ //S piece
+	[    
+		{x: 0, y: 1},
+		{x: 0, y: 2},
+		{x: 1, y: 0},
+		{x: 1, y: 1}
+	],
+ 	//Z piece
+	[    
+		{x: 0, y: 0},
+		{x: 1, y: 0},
+		{x: 1, y: 1},
+		{x: 2, y: 1}
+	],
+	//O piece
+	[
+		{x: 0, y: 0},
+		{x: 0, y: 1},
+		{x: 1, y: 1},
+		{x: 1, y: 0}		
+	],
+
+	//I piece
+	[
+		{x: 0, y: 0},
+		{x: 0, y: 1},
+		{x: 0, y: 2},
+		{x: 0, y: 3}		
+	],	
+ /*
+    0   1   2   3
+ 0  x   x   x
+ 1      x     
+ 2     
+ 3  
+ */
+	//T piece
+	[
+		{x: 0, y: 0},
+		{x: 1, y: 0},
+		{x: 2, y: 0},
+		{x: 1, y: 1}		
+	],	
+	//L piece
+	[
+		{x: 0, y: 0},
+		{x: 0, y: 1},
+		{x: 0, y: 2},
+		{x: 1, y: 2}		
+	],	
+	//J piece
+	[
+		{x: 1, y: 0},
+		{x: 1, y: 1},
+		{x: 1, y: 2},
+		{x: 0, y: 2}		
+	],	
+]
+var game;
+
+var defaultBlockSize = {
+	height: 30,
+	width: 30,
+	units: 'px'
+}
+
+function startApp(){
+	game = new TetrisGame(defaultBlockSize);
+	game.createPiece(blockTemplates[2], 'lime');
+	game.render();
+	//game.playSong(.09);
+}
+
+
+
+
+
+
+
+
