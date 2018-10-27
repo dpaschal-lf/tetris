@@ -36,3 +36,69 @@ body{
 	position: absolute;
 }
 
+/* modal code */
+
+.modalShadow{
+	background-color: black;
+	background-color: rgba(0,0,0,.4);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+}
+.modalBody{
+	background-color: white;
+	border: 3px double black;
+	width: 80%;
+	min-height: 20%;
+	max-height: 80%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+#modalMessage{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+#modalClose{
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: black;
+	color: white;
+	padding: 5px;
+	cursor: pointer;
+}
+#modalClose:hover{
+	color: black;
+	background-color: darkgrey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

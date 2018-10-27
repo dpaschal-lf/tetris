@@ -26,6 +26,17 @@ class TetrisGame{
 		clearInterval(this.updateTimer);
 		this.updateTimer = null;
 	}
+	showStartScreen(){
+		$("#startGameButton").click(this.startGame.bind(this));
+	}
+	startGame(){
+		this.closeModal();
+		this.playSong(.09);
+		this.startGameUpdate();
+	}
+	closeModal(){
+		$("#modal").hide(200);
+	}
 	handleUpdate(){
 		for(var piecesI=0; piecesI < this.pieces.length; piecesI++){
 			var piecesLoc = this.pieces[piecesI].getLocation();

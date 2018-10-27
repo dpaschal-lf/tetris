@@ -69,10 +69,10 @@ var defaultBlockSize = {
 
 function startApp(){
 	game = new TetrisGame(defaultBlockSize);
-	game.createPiece(blockTemplates[2], 'lime');
+	game.showStartScreen();
+	game.createPiece(blockTemplates[1], 'lime');
 	game.render();
-	game.startGameUpdate();
-	game.playSong(.09);
+
 }
 
 
